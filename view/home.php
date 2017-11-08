@@ -6,14 +6,16 @@
           <div class="blue-grey darken-1">
 
             <div class="card-content white-text row">
-              <p class="col s12 m3">Titulaire du compte.</p>
-              <p class="col s12 m3">Numéro de compte</p>
-              <p class="col s12 m3">Solde </p>
-              <p class="col s12 m2">date modif</p>
-              <p class="col s12 m1"><a></a></p>
+              <ul class="container col s12">
+              <li class="col s12 m3">Titulaire du compte.</li>
+              <li class="col s12 m3">Numéro de compte</li>
+              <li class="col s12 m2">Solde </li>
+              <li class="col s12 m3">date modif</li>
+              <li <li class="tab col s12 m1"><a href="#"><i class="fa fa-trash fa-2" aria-hidden="true"></i></a></li></li>
+            </ul>
             </div>
 
-            <div class="card-action">
+            <!-- <div class="card-action">
                     <ul class="tabs blue-grey darken-4">
                       <li class="tab col s2"><a href="#test-swipe-1"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-eur " aria-hidden="true"></i></a></li>
                       <li class="tab col s2"><a href="#test-swipe-2"><i class="fa fa-minus" aria-hidden="true"></i>  <i class="fa fa-eur " aria-hidden="true"></i></a></li>
@@ -49,10 +51,24 @@
                       </div>
                     </form>
                   </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
+        <?php
+
+            $number = '0123456789X';
+            $letter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            $randstring = '';
+            for ($i = 0; $i < 10; $i++) {
+                $randstring .= $number[rand(0, strlen($number))];
+            }
+                $randstring .= $letter[rand(0, strlen($letter))];
+
+
+        echo $randstring;
+        ?>
       </section>
 
 <?php   include '../view/footer.php'; ?>
