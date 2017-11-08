@@ -25,17 +25,20 @@
     <body class="row">
 
       <nav>
-          <div class="nav-wrapper  blue-grey darken-1">
-            <a href="home.php" class="brand-logo"><img class=" col m2 circle responsive-img" src="../img/logo.png" alt="logo du site"></a>
+          <div class="nav-wrapper blue-grey darken-1">
+            <a href="home.php" class="brand-logo"><img class="col s10 m5 circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="../controller/addVehicule.php">Créer un produit</a></li>
+                <li><a href="../controller/addCompte.php">Créer un produit</a></li>
                 <li><a href="home.php">Tous les produits</a></li>
+                <li><a href="#test-swipe-1">Faire un virement</a></li>
               </ul>
 
               <ul class="side-nav" id="mobile-demo">
-                <li><a href="../controller/addVehicule.php">Créer un produit</a></li>
+                <li><a href="../controller/addCompte.php">Créer un produit</a></li>
                 <li><a href="home.php">Tous les produits</a></li>
+                <li><a href="#test-swipe-1">Faire un virement</a></li>
+                
               </ul>
         </nav>
 
