@@ -23,6 +23,8 @@
            }
        }
    }
+
+  //  *******************setter*******************
    public function setIdCompte($idCompte)
    {
      $idCompte = (int) $idCompte;
@@ -58,6 +60,27 @@
    {
      $this->date = $date;
    }
+
+  //  *********************getter******************
+  public function getIdCompte()
+  {
+    return $this->$idCompte;
+  }
+
+  public function getIdUser()
+  {
+    return $this->$idUser;
+  }
+
+  public function getNumeroDeCompte()
+  {
+      return $this->$numeroDeCompte;
+  }
+
+  public function getDate()
+  {
+    return $this->$date;
+  }
  }
 
  ?>
