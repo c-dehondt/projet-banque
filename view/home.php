@@ -23,18 +23,23 @@
                <h4>creer un compte</h4>
                <form action="../controller/addCompte.php" method="post" class="col s12" enctype="multipart/form-data">
                   <div class="input-field col s12">
+                    <input name='numeroDeCompte' id="numeroDeCompte" type="hidden">
                     <input  id="nom" type="text" name="nom" class="validate">
                     <label for="non">Nom</label>
                   </div>
 
                   <div class="input-field col s12">
-                    <input name='money' id="virement" type="number" class="validate">
+                    <input name='solde' id="virement" type="number" class="validate">
                     <label for="Prix">Sommes </label>
                     <small>Entrer une somme de type chiffre:15899</small>
                   </div>
 
+
+
+
+
                <div class="card-action">
-                 <input class="waves-effect waves-light btn" type="submit" name="" value="valider">
+                 <input class="waves-effect waves-light btn" type="submit"  value="valider">
                </div>
                </form>
 

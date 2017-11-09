@@ -46,12 +46,14 @@
 
      public function setNom($nom)
      {
-         $this->nom =$nom;
+         if (is_string($nom)) {
+             $this->nom = $nom;
+         }
      }
 
      public function setSolde($solde)
      {
-       $this->solde = $solde;
+         $this->solde = $solde;
      }
 
      public function setNumeroDeCompte($numeroDeCompte)
@@ -92,7 +94,7 @@
 
      public function getSolde()
      {
-       return $this->solde;
+         return $this->solde;
      }
 
      public function getNumeroDeCompte()
