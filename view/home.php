@@ -11,10 +11,13 @@
               <p class="col s12 m2"><?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?></p>
               <p class="col s12 m2"><?php echo htmlspecialchars($compte->getSolde()) ?> €</p>
               <p class="col s12 m2"><?php echo htmlspecialchars($compte->getDate()) ?></p>
-              <p class="col s12 m4 offset-s3"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></p>
-            </div>
+              <p> <?php echo $compte->getIdCompte()?></p>
+              <p class="col s12 m4 offset-s3">
+                <a href="../controller/deleteCompte.php?cancel=<?php echo $compte->getIdCompte()?>"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+              </p>
+              </div>
           </div>
-        <?php endforeach; ?>
+        <?php endforeach;?>
 
         </div>
                   <!-- Modal Structure1 -->

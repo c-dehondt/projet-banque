@@ -31,7 +31,7 @@
      {
          $idCompte = (int) $idCompte;
 
-         if ($idVCompte > 0) {
+         if ($idCompte > 0) {
              $this->idCompte = $idCompte;
          }
      }

@@ -26,6 +26,7 @@ class managerCompte
           return $compte;
       }
 
+      // add an account
       public function addCompte(compte $addCompte)
       {
         $request = $this->bdd->prepare('INSERT INTO compte (Nom, solde, numeroDeCompte, date)
@@ -37,10 +38,17 @@ class managerCompte
         'Nom'=>$addCompte->getNom(),
         'solde'=>$addCompte->getSolde(),
         'numeroDeCompte'=>$addCompte->getNumeroDeCompte(),
-
         ));
       }
 
+      // delete an account
+      public function deleteCompte($idCompte)
+      {
+        $request=$this->bdd->prepare('DELETE FROM compte WHERE idCompte = :idCompte');
+        $request->execute(array('idCompte'=> $idCompte));
+      }
+
+      // updateMoneys
       public function updateMoney($solde, $numeroDeCompte)
       {
         $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE numeroDeCompte=:numeroDeCompte');
