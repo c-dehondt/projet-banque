@@ -29,20 +29,20 @@
             <a href="home.php"><img class="col s3 m1 circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="../controller/addCompte.php">Créer un produit</a></li>
                 <li><a href="home.php">Tous les produits</a></li>
-                <li><a class=" modal-trigger" href="#modal1">Faire un virement</a></li>
-                <li><a class=" modal-trigger" href="#modal2">Faire un retrait</a></li>
-                <li><a class=" modal-trigger" href="#modal3">Faire un Depot</a></li>
+                <li><a class=" modal-trigger" href="#modal1">Créer un produit</a></li>
+                <li><a class=" modal-trigger" href="#modal2">Faire un virement</a></li>
+                <li><a class=" modal-trigger" href="#modal3">Faire un retrait</a></li>
+                <li><a class=" modal-trigger" href="#modal4">Faire un Depot</a></li>
               </ul>
 
               <ul class="side-nav" id="mobile-demo">
                 <li><a href="home.php"><img class="col s3 circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a></li>
                 <li><a href="../controller/addCompte.php">Créer un produit</a></li>
                 <li><a href="home.php">Tous les produits</a></li>
-                <li><a class="modal-trigger" href="#modal1">Faire un virement</a></li>
-                <li><a class="modal-trigger" href="#modal2">Faire un retrait</a></li>
-                <li><a class="modal-trigger" href="#modal3">Faire un Depot</a></li>
+                <li><a class="modal-trigger" href="#modal2">Faire un virement</a></li>
+                <li><a class="modal-trigger" href="#modal3">Faire un retrait</a></li>
+                <li><a class="modal-trigger" href="#modal4">Faire un Depot</a></li>
 
               </ul>
         </nav>

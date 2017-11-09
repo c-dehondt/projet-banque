@@ -25,5 +25,14 @@ class managerCompte
           }
           return $compte;
       }
+
+      public function updateMoney($solde, $numeroDeCompte)
+      {
+        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE numeroDeCompte=:numeroDeCompte');
+        $request->execute(array(
+          'solde'=> $solde->getSolde(),
+          'numeroDeCompte'=> $numeroDeCompte
+        ));
+      }
 }
 ?>

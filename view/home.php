@@ -17,11 +17,35 @@
         <?php endforeach; ?>
 
         </div>
+                  <!-- Modal Structure1 -->
+           <div id="modal1" class="modal">
+             <div class="modal-content">
+               <h4>creer un compte</h4>
+               <form action="../controller/addCompte.php" method="post" class="col s12" enctype="multipart/form-data">
+                  <div class="input-field col s12">
+                    <input  id="nom" type="text" name="nom" class="validate">
+                    <label for="non">Nom</label>
+                  </div>
+
+                  <div class="input-field col s12">
+                    <input name='money' id="virement" type="number" class="validate">
+                    <label for="Prix">Sommes </label>
+                    <small>Entrer une somme de type chiffre:15899</small>
+                  </div>
+
+               <div class="card-action">
+                 <input class="waves-effect waves-light btn" type="submit" name="" value="valider">
+               </div>
+               </form>
+
+             </div>
+           </div>
+
                 <!-- Modal Structure1 -->
-         <div id="modal1" class="modal">
+         <div id="modal2" class="modal">
            <div class="modal-content">
              <h4>Faire un virement</h4>
-             <form action="" method="post" class="col s12" enctype="multipart/form-data">
+             <form action="../controller/updateMoney.php" method="post" class="col s12" enctype="multipart/form-data">
                 <div class="input-field col s12">
                   <select>
                     <?php foreach ($comptes as $compte): ?>
@@ -30,7 +54,7 @@
                   </select>
                   <label>sélectionner un compte</label>
 
-                  <input name='price' id="Prix" type="number" class="validate">
+                  <input name='money' id="virement" type="number" class="validate">
                   <label for="Prix">Sommes </label>
                   <small>Entrer une somme de type chiffre:15899</small>
 
@@ -44,12 +68,19 @@
          </div>
 
                <!-- Modal Structur2 -->
-        <div id="modal2" class="modal">
+        <div id="modal3" class="modal">
           <div class="modal-content">
             <h4>Faire un retrait</h4>
-            <form action="" method="post" class="col s12" enctype="multipart/form-data">
+            <form action="../controller/updateMoney.php" method="post" class="col s12" enctype="multipart/form-data">
               <div class="input-field col s12 m12">
-                <input name='price' id="Prix" type="number" class="validate">
+                <select>
+                  <?php foreach ($comptes as $compte): ?>
+                  <option value="<?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
+                <?php endforeach; ?>
+                </select>
+                <label>sélectionner un compte</label>
+
+                <input name='money' id="addmoney" type="number" class="validate">
                 <label for="Prix">Sommes </label>
                 <small>Entrer une somme de type chiffre:15899</small>
               </div>
@@ -62,12 +93,19 @@
         </div>
 
                 <!-- Modal Structur3 -->
-         <div id="modal3" class="modal">
+         <div id="modal4" class="modal">
            <div class="modal-content">
              <h4>Faire un depot</h4>
-             <form action="" method="post" class="col s12" enctype="multipart/form-data">
+             <form action="../controller/updateMoney.php" method="post" class="col s12" enctype="multipart/form-data">
                <div class="input-field col s12 m12">
-                 <input name='price' id="Prix" type="number" class="validate">
+                 <select>
+                   <?php foreach ($comptes as $compte): ?>
+                   <option value="<?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
+                 <?php endforeach; ?>
+                 </select>
+                 <label>sélectionner un compte</label>
+
+                 <input name='money' id="-money" type="number" class="validate">
                  <label for="Prix">Sommes </label>
                  <small>Entrer une somme de type chiffre:15899</small>
                </div>
