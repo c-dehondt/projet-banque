@@ -58,14 +58,7 @@
 
      public function setNumeroDeCompte($numeroDeCompte)
      {
-         $number = '0123456789';
-         $letter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-         $numeroDeCompte = '';
-         for ($i = 0; $i < 10; $i++) {
-             $numeroDeCompte .= $number[rand(0, strlen($number))];
-         }
-         $numeroDeCompte .= $letter[rand(0, strlen($letter))];
+        
 
          $this->numeroDeCompte = $numeroDeCompte;
      }

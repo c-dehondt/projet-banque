@@ -5,10 +5,10 @@ require_once '../service/chargerClass.php';
 spl_autoload_register('chargerClasse');
 
 $manager= new managerCompte($bdd);
-$solde = new $_POST['money'];
-$numeroDeCompte=$_POST['value'];
-
-$manager->updateMoney($solde, $numeroDeCompte);
-
-
+$removesolde = new compte ($_POST);
+$removesolde= $manager->getIdCompte($removesolde);
+$removesolde->setSolde($removesolde->getSolde()-$_POST['updateMoney']);
+$manager->removeMoney($removesolde);
+header('location:home.php');
 require '../view/home.php';
+?>

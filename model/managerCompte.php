@@ -41,6 +41,15 @@ class managerCompte
         ));
       }
 
+      public function getIdCompte(compte $compte)
+      {
+          $request = $this->bdd->prepare('SELECT * FROM compte WHERE idCompte = :idCompte');
+          $request->execute(array('idCompte' => $compte->getIdCompte()));
+          $donnees = $request->fetch(PDO::FETCH_ASSOC);
+          $compte->hydrate($donnees);
+          return $compte;
+      }
+
       // delete an account
       public function deleteCompte($idCompte)
       {
@@ -48,13 +57,24 @@ class managerCompte
         $request->execute(array('idCompte'=> $idCompte));
       }
 
+
+
       // updateMoneys
-      public function updateMoney($solde, $numeroDeCompte)
+      public function addMoney(compte $addsolde)
       {
-        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE numeroDeCompte=:numeroDeCompte');
+        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE idCompte=:idCompte');
         $request->execute(array(
-          'solde'=> $solde->getSolde(),
-          'numeroDeCompte'=> $numeroDeCompte
+          'solde'=> $addsolde->getSolde(),
+          'idCompte'=> $addsolde->getIdCompte()
+        ));
+      }
+
+      public function removeMoney(compte $removesolde)
+      {
+        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE idCompte=:idCompte');
+        $request->execute(array(
+          'solde'=> $removesolde->getSolde(),
+          'idCompte'=> $removesolde->getIdCompte()
         ));
       }
 }

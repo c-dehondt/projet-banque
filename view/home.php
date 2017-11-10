@@ -1,24 +1,26 @@
 <?php include '../view/header.php';?>
 
 <section class="row container">
-  <h2>Mes comptes</h2>
+  <h2 class="center-align">Mes comptes</h2>
   <!-- view customer accounts -->
         <div class="col s12">
+          <div class="card blue-grey darken-4">
           <?php foreach ($comptes as $compte): ?>
-          <div class="blue-grey darken-1">
+          <div class="card blue-grey darken-1">
             <div class="card-content white-text row center-align">
-              <p class="col s12 m2"><?php echo htmlspecialchars($compte->getNom()) ?></p>
-              <p class="col s12 m2"><?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?></p>
-              <p class="col s12 m2"><?php echo htmlspecialchars($compte->getSolde()) ?> €</p>
-              <p class="col s12 m2"><?php echo htmlspecialchars($compte->getDate()) ?></p>
-              <p> <?php echo $compte->getIdCompte()?></p>
+              <p class="col s12 m2">Titulaire du compte<br><?php echo htmlspecialchars($compte->getNom()) ?></p>
+              <p class="col s12 m2">Numéro du compte<br><?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?></p>
+              <p class="col s12 m2">Solde du compte<br><?php echo htmlspecialchars($compte->getSolde()) ?> €</p>
+              <p class="col s12 m2">Date du compte<br><?php echo htmlspecialchars($compte->getDate()) ?></p>
               <p class="col s12 m4 offset-s3">
-                <a href="../controller/deleteCompte.php?cancel=<?php echo $compte->getIdCompte()?>"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+                <a href="../controller/deleteCompte.php?cancel=<?php echo $compte->getIdCompte()?>">
+                  <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                </a>
               </p>
-              </div>
+            </div>
           </div>
         <?php endforeach;?>
-
+      </div>
         </div>
                   <!-- Modal Structure1 -->
            <div id="modal1" class="modal">
@@ -37,10 +39,6 @@
                     <small>Entrer une somme de type chiffre:15899</small>
                   </div>
 
-
-
-
-
                <div class="card-action">
                  <input class="waves-effect waves-light btn" type="submit"  value="valider">
                </div>
@@ -49,80 +47,95 @@
              </div>
            </div>
 
-                <!-- Modal Structure1 -->
+                <!-- Modal Structure1 FAIRE UN VIREMENT-->
          <div id="modal2" class="modal">
            <div class="modal-content">
              <h4>Faire un virement</h4>
-             <form action="../controller/updateMoney.php" method="post" class="col s12" enctype="multipart/form-data">
-                <div class="input-field col s12">
-                  <select>
+             <form action="../controller/transferMoney.php" method="post" class="col s12" enctype="multipart/form-data">
+                <div class="input-field col s12 m6">
+                  <select name="removeTransfer">
                     <?php foreach ($comptes as $compte): ?>
-                    <option value="<?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
+                    <option value="<?php echo htmlspecialchars($compte->getIDCompte())?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
                   <?php endforeach; ?>
                   </select>
-                  <label>sélectionner un compte</label>
+                  <label>sélectionner un compte à débiter</label>
+                </div>
 
+                <div class="input-field col s12 m6">
+                  <select name="addTransfer">
+                    <?php foreach ($comptes as $compte): ?>
+                    <option value="<?php echo htmlspecialchars($compte->getIDCompte())?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
+                  <?php endforeach; ?>
+                  </select>
+                  <label>sélectionner un compte à </label>
+                </div>
+
+                <div class="input-field col s12">
                   <input name='money' id="virement" type="number" class="validate">
                   <label for="Prix">Sommes </label>
                   <small>Entrer une somme de type chiffre:15899</small>
-
                 </div>
              <div class="card-action">
-               <input class="waves-effect waves-light btn" type="submit" name="" value="valider">
+               <input class="waves-effect waves-light btn" type="submit" value="valider">
              </div>
              </form>
 
            </div>
          </div>
+       </section>
 
-               <!-- Modal Structur2 -->
+               <!-- Modal Structur2 FAIRE UN RETRAIT-->
         <div id="modal3" class="modal">
           <div class="modal-content">
             <h4>Faire un retrait</h4>
-            <form action="../controller/updateMoney.php" method="post" class="col s12" enctype="multipart/form-data">
+            <form action="../controller/removeMoney.php" method="post" class="col s12" enctype="multipart/form-data">
               <div class="input-field col s12 m12">
-                <select>
-                  <?php foreach ($comptes as $compte): ?>
-                  <option value="<?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
-                <?php endforeach; ?>
+                <select name="idCompte">
+                  <?php foreach ($comptes as $compte):?>
+                    <option value="<?php echo htmlspecialchars($compte->getIDCompte())?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
+                  <?php endforeach; ?>
                 </select>
                 <label>sélectionner un compte</label>
+              </div>
 
-                <input name='money' id="addmoney" type="number" class="validate">
+              <div class="input-field col s12 m12">
+                <input name='updateMoney' id="updateMoney" type="number" class="validate">
                 <label for="Prix">Sommes </label>
                 <small>Entrer une somme de type chiffre:15899</small>
               </div>
+
             <div class="card-action">
-              <input class="waves-effect waves-light btn" type="submit" name="" value="valider">
+              <input class="waves-effect waves-light btn" type="submit" value="valider">
             </div>
           </form>
           </div>
 
         </div>
 
-                <!-- Modal Structur3 -->
+                <!-- Modal Structur3 FAIR UN DEPOT-->
          <div id="modal4" class="modal">
            <div class="modal-content">
              <h4>Faire un depot</h4>
-             <form action="../controller/updateMoney.php" method="post" class="col s12" enctype="multipart/form-data">
+             <form action="../controller/addMoney.php" method="post" class="col s12" enctype="multipart/form-data">
                <div class="input-field col s12 m12">
-                 <select>
+                 <select name="idCompte">
                    <?php foreach ($comptes as $compte): ?>
-                   <option value="<?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
-                 <?php endforeach; ?>
+                     <option value="<?php echo htmlspecialchars($compte->getIDCompte())?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
+                   <?php endforeach; ?>
                  </select>
                  <label>sélectionner un compte</label>
+              </div>
 
-                 <input name='money' id="-money" type="number" class="validate">
+              <div class="input-field col s12 m12">
+                 <input name='addMoney' id="addMoney" type="number" class="validate">
                  <label for="Prix">Sommes </label>
                  <small>Entrer une somme de type chiffre:15899</small>
                </div>
              <div class="card-action">
-               <input class="waves-effect waves-light btn" type="submit" name="" value="valider">
+               <input class="waves-effect waves-light btn" type="submit" value="valider">
              </div>
            </div>
            </form>
          </div>
-      </section>
 
 <?php   include '../view/footer.php'; ?>
