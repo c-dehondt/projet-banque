@@ -37,7 +37,7 @@ class managerCompte
         $request->execute(array(
         'Nom'=>$addCompte->getNom(),
         'solde'=>$addCompte->getSolde(),
-        'numeroDeCompte'=>$addCompte->getNumeroDeCompte(),
+        'numeroDeCompte'=>$addCompte->getNumeroDeCompte()
         ));
       }
 
@@ -60,7 +60,7 @@ class managerCompte
 
 
       // updateMoneys
-      public function addMoney(compte $addsolde)
+      public function addMoney(compte $solde)
       {
         $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE idCompte=:idCompte');
         $request->execute(array(
@@ -69,12 +69,12 @@ class managerCompte
         ));
       }
 
-      public function removeMoney(compte $removesolde)
+      public function updadeMoney(compte $solde)
       {
         $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE idCompte=:idCompte');
         $request->execute(array(
-          'solde'=> $removesolde->getSolde(),
-          'idCompte'=> $removesolde->getIdCompte()
+          'solde'=> $solde->getSolde(),
+          'idCompte'=> $solde->getIdCompte()
         ));
       }
 }

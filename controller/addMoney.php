@@ -8,7 +8,7 @@ $manager= new managerCompte($bdd);
 $addsolde = new compte ($_POST);
 $addsolde= $manager->getIdCompte($addsolde);
 $addsolde->setSolde($addsolde->getSolde()+$_POST['addMoney']);
-$manager->addMoney($addsolde);
+$manager->updadeMoney($addsolde);
 header('location:home.php');
 require '../view/home.php';
 ?>

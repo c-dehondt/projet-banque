@@ -58,7 +58,6 @@
 
      public function setNumeroDeCompte($numeroDeCompte)
      {
-        
 
          $this->numeroDeCompte = $numeroDeCompte;
      }

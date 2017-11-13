@@ -4,9 +4,9 @@
   <h2 class="center-align">Mes comptes</h2>
   <!-- view customer accounts -->
         <div class="col s12">
-          <div class="card blue-grey darken-4">
+          <div class="card">
           <?php foreach ($comptes as $compte): ?>
-          <div class="card blue-grey darken-1">
+          <div class="card blue-grey darken-4">
             <div class="card-content white-text row center-align">
               <p class="col s12 m2">Titulaire du compte<br><?php echo htmlspecialchars($compte->getNom()) ?></p>
               <p class="col s12 m2">Numéro du compte<br><?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?></p>
@@ -53,7 +53,7 @@
              <h4>Faire un virement</h4>
              <form action="../controller/transferMoney.php" method="post" class="col s12" enctype="multipart/form-data">
                 <div class="input-field col s12 m6">
-                  <select name="removeTransfer">
+                  <select name="idCompte">
                     <?php foreach ($comptes as $compte): ?>
                     <option value="<?php echo htmlspecialchars($compte->getIDCompte())?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
                   <?php endforeach; ?>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="input-field col s12 m6">
-                  <select name="addTransfer">
+                  <select name="idCompteb">
                     <?php foreach ($comptes as $compte): ?>
                     <option value="<?php echo htmlspecialchars($compte->getIDCompte())?>"><?php echo htmlspecialchars($compte->getNumeroDeCompte())?></option>
                   <?php endforeach; ?>
@@ -76,7 +76,7 @@
                   <small>Entrer une somme de type chiffre:15899</small>
                 </div>
              <div class="card-action">
-               <input class="waves-effect waves-light btn" type="submit" value="valider">
+               <input class="waves-effect waves-light btn" name="transfer" type="submit" value="valider">
              </div>
              </form>
 
