@@ -61,7 +61,7 @@ class managerCompte
 // addMoney
       public function addMoney(compte $solde)
       {
-        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE idCompte=:idCompte');
+        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde, date= NOW() WHERE idCompte=:idCompte');
         $request->execute(array(
           'solde'=> $addsolde->getSolde(),
           'idCompte'=> $addsolde->getIdCompte()
@@ -71,7 +71,7 @@ class managerCompte
       // updateMoneys
       public function updateMoney(compte $solde)
       {
-        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde WHERE idCompte=:idCompte');
+        $request = $this->bdd->prepare('UPDATE compte SET solde=:solde, date= NOW() WHERE idCompte=:idCompte');
         $request->execute(array(
           'solde'=> $solde->getSolde(),
           'idCompte'=> $solde->getIdCompte()

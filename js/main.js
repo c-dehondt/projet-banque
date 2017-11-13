@@ -11,8 +11,12 @@ $(document).ready(function() {
 
  $(".button-collapse").sideNav();
 
- $(function() {
-     $('textarea#froala-editor').froalaEditor()
-   });
-
-   
+ // $(".solde").each(function(){
+ //   var solde=$(this).text();
+ //   if (solde < 0) {
+ //     $(this).css("color","red");
+ //   }
+ //   else {
+ //     $(this).css("color","green");
+ //   }
+ // });
