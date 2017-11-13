@@ -24,27 +24,28 @@
     </head>
     <body class="row">
 
-      <nav>
-          <div class="nav-wrapper blue-grey darken-1">
-            <a href="home.php"><img class="col s3 m1 circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="../controller/addCompte.php">Créer un produit</a></li>
-                <li><a href="home.php">Tous les produits</a></li>
-                <li><a href="#">Faire un virement</a></li>
-                <li><a href="#">Faire un retrait</a></li>
-                <li><a href="#">Faire un Depot</a></li>
-              </ul>
+    <header class="blue-grey white-text darken-1">
+      <div class="row">
+        <a class="center-align col s12 m2 l1" href="home.php"><img class="circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a>
+        <h1 class="center-align col s12 m10 l10">Banque</h1>
+      </div>
+      <nav class="nav-wrapper blue-grey darken-1">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="home.php">Tous mes comptes</a></li>
+          <li><a class=" modal-trigger" href="#modal1">Créer un compte</a></li>
+          <li><a class=" modal-trigger" href="#modal2">Faire un virement</a></li>
+          <li><a class=" modal-trigger" href="#modal3">Faire un retrait</a></li>
+          <li><a class=" modal-trigger" href="#modal4">Faire un Depot</a></li>
+        </ul>
 
-              <ul class="side-nav" id="mobile-demo">
-                <li><a href="home.php"><img class="col s3 circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a></li>
-                <li><a href="../controller/addCompte.php">Créer un produit</a></li>
-                <li><a href="home.php">Tous les produits</a></li>
-                <li><a href="#">Faire un virement</a></li>
-                <li><a href="#">Faire un retrait</a></li>
-                <li><a href="#">Faire un Depot</a></li>
-
-              </ul>
-        </nav>
-
-        <main class="container row">
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="home.php"><img class="col s3 circle responsive-img" src="../img/logo.jpg" alt="logo du site"></a></li>
+          <li><a href="home.php">Tous Mes Comptes</a></li>
+          <li><a class="modal-trigger" href="#modal1">Créer un compte</a></li>
+          <li><a class="modal-trigger" href="#modal2">Faire un virement</a></li>
+          <li><a class="modal-trigger" href="#modal3">Faire un retrait</a></li>
+          <li><a class="modal-trigger" href="#modal4">Faire un Depot</a></li>
+        </ul>
+      </nav>
+          </header>
