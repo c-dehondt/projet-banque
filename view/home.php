@@ -11,7 +11,7 @@
               <p class="col s12 m2">Titulaire du compte<br><?php echo htmlspecialchars($compte->getNom()) ?></p>
               <p class="col s12 m2">Numéro du compte<br><?php echo htmlspecialchars($compte->getNumeroDeCompte()) ?></p>
               <p class="col s12 m2">Solde du compte<br><span class="solde"><?php echo htmlspecialchars($compte->getSolde()) ?> €</span></p>
-              <p class="col s12 m2">Date du compte<br><?php echo htmlspecialchars($compte->getDate()) ?></p>
+              <p class="col s12 m2">Dernière operation<br><?php echo htmlspecialchars($compte->getDate()) ?></p>
               <p class="col s12 m4 offset-s3">
                 <a href="../controller/deleteCompte.php?cancel=<?php echo $compte->getIdCompte()?>">
                   <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
